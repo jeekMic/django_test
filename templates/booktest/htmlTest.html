@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{t1|safe}}
+<hr>
+{% autoescape off%}
+{{ t1}}
+{% endautoescape %}
+<hr>
+{{ t2|default:"<b>sdbfdsfnkjsdf</b>"}}
+<hr>
+手动转义:
+{{t3|default:'&lt;b&gt;fsdjkfs&lt;/b&gt;'}}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反向解析</title>
+</head>
+<body>
+<a href="{%url 'booktest:show' 'shfb'%}">显示</a>
+<ul>
+{{hero.showname}}
+{% for hero in list%}
+<!--fooloop.counter表示的是在list前面添加序列号-->
+    {% if forloop.counter|divisibleby:"2"%}
+    <li style="color:red">{{forloop.counter}}:->{{hero.showname}}</li>
+    {% else %}
+    <li style="color:blue">{{forloop.counter}}:->{{hero.showname}}</li>
+    {% endif%}
+
+<br>
+<hr>
+<!--如果for循环什么东西也没有找到的时候会就会执行下面的代码-->
+{%empty%}
+啥也没找到
+{% endfor %}
+    </ul>
+</body>
+</html>
